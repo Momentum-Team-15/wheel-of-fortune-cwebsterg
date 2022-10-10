@@ -43,8 +43,9 @@ def play_game():
         new_guess = get_user_guess().upper()
         if new_guess == '':
             print("You forgot to enter a letter. Try again.")
-        elif new_guess in correct_guesses or incorrect_guesses:
+        elif new_guess in correct_guesses or new_guess in incorrect_guesses:
             print(f"You have already guessed '{new_guess}'. Pay attention!")
+            print("These are the letters you have guessed so far that are not in the word:")
         elif new_guess in word_to_guess:
             correct_guesses.append(new_guess)
             print(f"Cool Nastredamus bc '{new_guess}' is in it!")
